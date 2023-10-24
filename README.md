@@ -15,16 +15,23 @@ Taller sobre Git para la Semana de la Ciencia en la Ciudad de los Muchachos
 
     4.4 Ejecutamos el comando `cat ~/.ssh/id_ed25519.pub` en Powershell y copiamos el resultado que nos da, debería empezar por *ssh-ed25519...*
 
-    4.4 Una vez estamos aqui en donde pone *Title* ponemos nuestro nombre y en *Key* ponemos el contenido que hemos copiado en el mensaje anterior
+    4.4 Una vez estamos aqui en donde pone *Title* ponemos nuestro nombre y en *Key* ponemos el contenido que hemos copiado en el paso 3.4
 
     4.5 Ahora ejecutamos el siguiente comando en Powershell, esto configurará por defecto la clave que hemos creado para utilizarla en Github dentro de nuestro ordenador
-```powershell
-$contentToAdd = @"
-Host github.com
-    User git
-    IdentityFile ~/.ssh/id_ed25519
-    IdentitiesOnly yes
-"@
-    
-Add-Content "~/.ssh/config" $contentToAdd
+
+    ```powershell
+    $contentToAdd = @"
+    Host github.com
+        User git
+        IdentityFile ~/.ssh/id_ed25519
+        IdentitiesOnly yes
+    "@
+        
+    Add-Content "~/.ssh/config" $contentToAdd
     ```
+
+    4.5 Ahora para comprobar que funciona ejecutaremos el siguiente comando:
+    ```
+    git clone git@github.com:christiangonre/cmuchachos-2023.git
+    ```
+    Si el comando no da ningún error y ves una carpeta creada con el nombre cmuchachos-2023 es que todo hay ido genial!
