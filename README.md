@@ -11,7 +11,7 @@ Taller sobre Git para la Semana de la Ciencia en la Ciudad de los Muchachos
 
     4.2 Ejecutamos el comando `ssh-keygen -t ed25519` y presionamos enter hasta que el comando finalice, al final debe salir algo como *The key's randomart image is...*
 
-    4.3 Accedemos a la parte de configuración de claves SSH de Github [Link](https://github.com/settings/keys) y pinchamos en *New SSH key* arriba a la derecha
+    4.3 Accedemos a la parte de configuración de claves SSH de Github ([Link](https://github.com/settings/keys)) y pinchamos en *New SSH key* arriba a la derecha
 
     4.4 Ejecutamos el comando `cat ~/.ssh/id_ed25519.pub` en Powershell y copiamos el resultado que nos da, debería empezar por *ssh-ed25519...*
 
@@ -22,9 +22,9 @@ Taller sobre Git para la Semana de la Ciencia en la Ciudad de los Muchachos
 $contentToAdd = @"
 Host github.com
     User git
-    IdentityFile ~/.ssh/id_ed25519.pub
+    IdentityFile ~/.ssh/id_ed25519
     IdentitiesOnly yes
 "@
     
-Add-Content "~/.ssh/config3" $contentToAdd
+Add-Content "~/.ssh/config" $contentToAdd
     ```
